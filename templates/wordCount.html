@@ -1,0 +1,23 @@
+<h1>There are {{ wordCount }} words in the message</h1>
+<br />
+<a href="{% url 'home' %}">Start again!</a>
+<h2><i>Your original text:</i></h2>
+<p>{{ fulltext }}</p>
+<h3>Your word list and count</h3>
+<p>{{ wordDict }}</p>
+<!-- this is a comment -->
+<h4>A better ordering with a for loop</h4>
+<p>Creating the Table: <br />
+</p>
+<table>
+  <tr>
+    <td>Key</td>
+    <td>Value</td>
+  </tr>
+{% for word, count in wordDict.items %}
+<tr>
+  <td>{{ word }}</td>
+  <td>{{ count }}</td>
+</tr>
+{% endfor %}
+</table>
